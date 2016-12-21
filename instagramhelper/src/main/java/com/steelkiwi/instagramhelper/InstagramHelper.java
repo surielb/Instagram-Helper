@@ -26,7 +26,7 @@ public class InstagramHelper {
     private String redirectUri;
     private String scope;
 
-    private InstagramHelper(String clientId, String redirectUri) {
+    private InstagramHelper(String clientId, String redirectUri, String scope) {
         this.clientId = clientId;
         this.redirectUri = redirectUri;
         this.scope = scope;
@@ -68,7 +68,7 @@ public class InstagramHelper {
         }
         
         public InstagramHelper build() {
-            return new InstagramHelper(clientId, redirectUrl);
+            return new InstagramHelper(clientId, redirectUrl,scope);
         }
     }
 }
