@@ -17,6 +17,7 @@ import static com.steelkiwi.instagramhelper.InstagramHelperConstants.INSTA_LOGIN
 import static com.steelkiwi.instagramhelper.InstagramHelperConstants.INSTA_REDIRECT_URL;
 import static com.steelkiwi.instagramhelper.InstagramHelperConstants.REDIRECT_URI_DEF;
 import static com.steelkiwi.instagramhelper.InstagramHelperConstants.RESPONSE_TYPE_DEF;
+import static com.steelkiwi.instagramhelper.InstagramHelperConstants.SCOPE_TYPE_DEF;
 import static com.steelkiwi.instagramhelper.utils.CommonUtils.checkNotNull;
 
 public class InstagramHelper {
@@ -32,7 +33,7 @@ public class InstagramHelper {
     }
 
     public void loginFromActivity(Activity context) {
-        String authUrl = MessageFormat.format(AUTH_URL + CLIENT_ID_DEF + "{0}" + REDIRECT_URI_DEF + "{1}" + RESPONSE_TYPE_DEF, clientId, redirectUri);
+        String authUrl = MessageFormat.format(AUTH_URL + CLIENT_ID_DEF + "{0}" + REDIRECT_URI_DEF + "{1}" + RESPONSE_TYPE_DEF + SCOPE_TYPE_DEF + "{2}", clientId, redirectUri,scope);
         Intent intent = new Intent(context, InstagramLoginActivity.class);
 
         Bundle bundle = new Bundle();
